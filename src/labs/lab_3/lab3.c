@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 
 int* append(int* array, size_t* size, int value) {
     int i;
@@ -15,18 +16,20 @@ int* append(int* array, size_t* size, int value) {
 
 int main(int argc, char* argv[]) {
     
-    /* Ingresar numeros uno a uno hasta que el usuario pare
-       Se ingresan dos numero distintos de largo N
-       Se suman como si los numeros de las listas fueran un solo numero cada
-       Dejar los digitos de la suma en otra lista */
+    /*-------------------------------------------------------------------------.
+    |  Ingresar numeros uno a uno hasta que el usuario pare                    |
+    |  Se ingresan dos numero distintos de largo N                             |
+    |  Se suman como si los numeros de las listas fueran un solo numero cada   |
+    |  Dejar los digitos de la suma en otra lista                              |
+    `--------------------------------------------------------------------------*/
 
     int n;
     size_t size = 0;
     int* n1 = (int*) malloc(sizeof(int));
     while(1) {
-        printf("Ingrese el numero %d de la primera lista o -1 para terminar: ", size+1);
+        printf("Ingrese el numero %d de la primera lista o 'q' para terminar: ", size+1);
         scanf("%d", &n);
-        if (n == -1) {
+        if (strcmp(&n, "q") == 0) {
             break;
         }
         size++;

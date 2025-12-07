@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
-#define DEFAULT_MAX -2147483648
+#define DEFAULT_MAX 0x80000000
 
 int* append(int* array, size_t* size, int value) {
     int i;
@@ -22,6 +22,7 @@ int main(int argc, char* argv[]) {
     int max = DEFAULT_MAX;
     int n;
     int i;
+
     for (i = 0; i < 10; i++) {
         printf("Ingrese el numero %d/10 del array: ", i+1);
         scanf("%d", &n);
